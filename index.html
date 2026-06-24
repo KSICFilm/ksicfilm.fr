@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KSICFILM — Studio créatif audiovisuel · Version française</title>
+<title>KSICFILM — Studio créatif audiovisuel · Clients francophones</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -32,7 +32,7 @@ ul{list-style:none}
 .btn-g:hover{background:linear-gradient(135deg,var(--gl),var(--gold));transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,168,76,.2)}
 .btn-o{background:transparent;color:var(--w);border:1px solid rgba(255,255,255,.2)}
 .btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
-.btn-wa{background:#25D366;color:#fff}
+.btn-wa{background:#25D366;color:#fff;border:none}
 .btn-wa:hover{background:#1ebe5c;transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.25)}
 .btn-full{width:100%;justify-content:center}
 
@@ -46,10 +46,14 @@ nav.sc{background:rgba(7,7,7,.97);backdrop-filter:blur(24px);padding:14px 0;bord
 .ni{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nlogo{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;letter-spacing:3.5px}
 .nlogo b{color:var(--gold)}
-.nlang{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--g1);margin-left:10px;border:1px solid var(--b1);padding:3px 8px}
 .nlinks{display:flex;gap:30px}
 .nlinks a{font-size:12px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--g2);transition:color .3s}
 .nlinks a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.lang-sw{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;letter-spacing:1.5px;border:1px solid var(--b1);padding:5px 12px}
+.lang-sw .l-act{color:var(--gold)}
+.lang-sw .l-sep{color:rgba(255,255,255,.2);margin:0 1px}
+.lang-sw a{color:var(--g1);transition:color .3s}.lang-sw a:hover{color:var(--gold)}
 .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hbg span{width:22px;height:1.5px;background:var(--w);display:block;transition:all .3s}
 .mob{display:none;position:fixed;inset:0;background:var(--bg);z-index:950;flex-direction:column;align-items:center;justify-content:center;gap:28px}
@@ -57,6 +61,9 @@ nav.sc{background:rgba(7,7,7,.97);backdrop-filter:blur(24px);padding:14px 0;bord
 .mob a{font-family:'Playfair Display',serif;font-size:22px;color:var(--w);transition:color .3s}
 .mob a:hover{color:var(--gold)}
 .mob-x{position:absolute;top:24px;right:26px;background:none;border:none;color:var(--w);font-size:26px;cursor:pointer}
+.mob-lang{display:flex;gap:12px;font-size:13px;font-weight:700;letter-spacing:2px;margin-top:8px}
+.mob-lang .l-act{color:var(--gold)}
+.mob-lang a{color:var(--g1)}
 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
@@ -75,9 +82,9 @@ nav.sc{background:rgba(7,7,7,.97);backdrop-filter:blur(24px);padding:14px 0;bord
 .hero-c{position:relative;z-index:2;padding-top:90px}
 .hero-pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;animation:fup .7s ease both}
 .pill{font-size:10.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--b2);padding:6px 14px}
-.h1{font-size:clamp(2.6rem,6vw,4.8rem);font-weight:700;line-height:1.07;margin-bottom:24px;animation:fup .7s .14s ease both}
+.h1{font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1.07;margin-bottom:24px;animation:fup .7s .14s ease both}
 .h1 i{font-style:italic;color:var(--gold)}
-.h-sub{font-size:clamp(.95rem,1.6vw,1.1rem);color:var(--g2);max-width:520px;line-height:1.8;margin-bottom:42px;animation:fup .7s .28s ease both}
+.h-sub{font-size:clamp(.95rem,1.6vw,1.1rem);color:var(--g2);max-width:560px;line-height:1.8;margin-bottom:42px;animation:fup .7s .28s ease both}
 .hbtns{display:flex;gap:14px;flex-wrap:wrap;animation:fup .7s .42s ease both}
 .scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:fup 1s .7s ease both}
 .scroll-hint span{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--g1)}
@@ -89,8 +96,18 @@ section{padding:110px 0}
 .sec-hd{margin-bottom:64px}
 .tline{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 
+/* POUR QUI */
+#pourqui{background:var(--s1);position:relative}
+.pq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1)}
+.pq-card{background:var(--card);padding:38px 28px;transition:all .4s;position:relative;overflow:hidden}
+.pq-card::after{content:'';position:absolute;left:0;bottom:0;right:0;height:2px;background:linear-gradient(90deg,var(--gd),var(--gold));transform:scaleX(0);transition:transform .4s}
+.pq-card:hover{background:var(--card2)}.pq-card:hover::after{transform:scaleX(1)}
+.pq-ico{font-size:26px;margin-bottom:18px;display:block}
+.pq-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;margin-bottom:10px}
+.pq-desc{font-size:13px;color:var(--g1);line-height:1.7}
+
 /* SERVICES */
-#services{background:var(--s1);position:relative}
+#services{background:var(--bg)}
 .sv-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1)}
 .sv{background:var(--card);padding:42px 30px;transition:all .4s;position:relative;overflow:hidden}
 .sv.s2{grid-column:span 2}.sv.s3{grid-column:span 3}
@@ -105,16 +122,17 @@ section{padding:110px 0}
 .sv:hover .sv-tags li{border-color:rgba(201,168,76,.25);color:var(--g2)}
 
 /* PROCESSUS */
-#processus{background:var(--bg)}
+#processus{background:var(--s1);position:relative}
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
 .proc-grid::before{content:'';position:absolute;top:20px;left:calc(12.5%);right:calc(12.5%);height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,168,76,.2),var(--gold));pointer-events:none}
 .proc-item{padding:0 20px 0 0}
-.proc-num{width:40px;height:40px;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;background:var(--bg);position:relative;z-index:1;margin-bottom:26px}
+.proc-num{width:40px;height:40px;border:1px solid var(--b2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;background:var(--s1);position:relative;z-index:1;margin-bottom:26px}
 .proc-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:10px}
 .proc-desc{font-size:13px;color:var(--g1);line-height:1.7}
+.proc-note{margin-top:48px;padding-top:32px;border-top:1px solid var(--b1);text-align:center;font-size:13.5px;color:var(--g2);font-style:italic;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.8}
 
 /* FORM */
-#devis{background:var(--s1);position:relative}
+#devis{background:var(--bg);position:relative}
 .fm-card{background:var(--card);border:1px solid var(--b1);padding:56px;position:relative}
 .fm-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .fm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -136,7 +154,7 @@ textarea.fin{resize:vertical;min-height:110px}
 .fnote{font-size:12px;color:var(--g1)}
 
 /* FAQ */
-#faq{background:var(--bg)}
+#faq{background:var(--s1);position:relative}
 .faq-list{border:1px solid var(--b1);overflow:hidden}
 .faq-item{border-bottom:1px solid var(--b1)}
 .faq-item:last-child{border-bottom:none}
@@ -149,10 +167,21 @@ textarea.fin{resize:vertical;min-height:110px}
 .faq-a-in{padding:0 28px 24px 48px;color:var(--g2);line-height:1.85;font-size:.975rem;border-left:2px solid var(--b2);margin:0 28px}
 .faq-item.open .faq-a{max-height:180px}
 
+/* CONTACT */
+#contact{background:var(--bg)}
+.ct-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1);margin-top:48px}
+.ct-card{background:var(--card);padding:40px 32px;text-align:center;transition:background .35s;position:relative;overflow:hidden}
+.ct-card::after{content:'';position:absolute;left:0;bottom:0;right:0;height:2px;background:linear-gradient(90deg,var(--gd),var(--gold));transform:scaleX(0);transition:transform .4s}
+.ct-card:hover{background:var(--card2)}.ct-card:hover::after{transform:scaleX(1)}
+.ct-ico{font-size:28px;margin-bottom:14px}
+.ct-lb{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.ct-val{font-size:14.5px;color:var(--g2);line-height:1.5;transition:color .3s}
+.ct-card:hover .ct-val{color:var(--w)}
+
 /* FINAL CTA */
 #cta-final{background:var(--s1);position:relative}
 .cta-wrap{max-width:680px;margin:0 auto;text-align:center}
-.cta-bigline{width:100%;max-width:400px;height:1px;background:linear-gradient(90deg,transparent,var(--b2),transparent);margin:36px auto}
+.cta-bigline{width:100%;max-width:380px;height:1px;background:linear-gradient(90deg,transparent,var(--b2),transparent);margin:36px auto}
 .cta-btns-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
 
 /* FOOTER */
@@ -170,31 +199,36 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
 .wa-btn:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.48)}
 
 /* RESPONSIVE */
-@media(max-width:960px){
-  .nlinks,.nav-cta .btn-g{display:none}
+@media(max-width:980px){
+  .nlinks,.btn-g.nav-btn{display:none}
   .hbg{display:flex}
   .hring,.hbg-word{display:none}
+  .pq-grid{grid-template-columns:1fr 1fr}
   .sv-grid{grid-template-columns:1fr 1fr}
   .sv.s2,.sv.s3{grid-column:span 1}
   .proc-grid{grid-template-columns:1fr 1fr;gap:40px}
   .proc-grid::before{display:none}
   .proc-item{padding:0}
-  .proc-num{background:var(--bg)}
+  .proc-num{background:var(--s1)}
   .faq-q{padding:20px}
   .faq-a-in{margin:0 20px;padding-left:16px}
   .faq-item.open .faq-a{max-height:240px}
   .fm-card{padding:32px 22px}
   .fm-grid{grid-template-columns:1fr}
   .ff.sp2,.fdiv,.fsec-t,.fsend{grid-column:span 1}
+  .ct-cards{grid-template-columns:1fr}
   .ft{flex-direction:column;text-align:center}
   section{padding:80px 0}
 }
-@media(max-width:580px){
+@media(max-width:600px){
+  .pq-grid{grid-template-columns:1fr}
   .sv-grid{grid-template-columns:1fr}
+  .sv.s2,.sv.s3{grid-column:span 1}
   .proc-grid{grid-template-columns:1fr}
   .hbtns,.cta-btns-row{flex-direction:column;align-items:flex-start}
   .cta-btns-row{align-items:center}
   .btn{justify-content:center}
+  .lang-sw{display:none}
 }
 </style>
 </head>
@@ -204,17 +238,20 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
 <nav id="nav">
   <div class="wrap">
     <div class="ni">
-      <div style="display:flex;align-items:center;gap:0">
-        <a href="#hero" class="nlogo">KSIC<b>FILM</b></a>
-        <span class="nlang">FR</span>
-      </div>
+      <a href="#hero" class="nlogo">KSIC<b>FILM</b></a>
       <ul class="nlinks">
+        <li><a href="#hero">Accueil</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#processus">Comment ça marche</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-cta" style="display:flex;align-items:center;gap:14px">
-        <a href="#devis" class="btn btn-g">Demander un devis</a>
+      <div class="nav-right">
+        <div class="lang-sw">
+          <span class="l-act">FR</span>
+          <span class="l-sep">|</span>
+          <a href="index.html" title="English version">EN</a>
+        </div>
+        <a href="#devis" class="btn btn-g nav-btn">Demander un devis</a>
         <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -224,11 +261,17 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
 <!-- MOBILE MENU -->
 <div class="mob" id="mob">
   <button class="mob-x" id="mob-x">✕</button>
+  <a href="#hero" class="ml">Accueil</a>
   <a href="#services" class="ml">Services</a>
   <a href="#processus" class="ml">Comment ça marche</a>
   <a href="#devis" class="ml">Demander un devis</a>
   <a href="#faq" class="ml">FAQ</a>
-  <a href="#cta-final" class="ml">Contact</a>
+  <a href="#contact" class="ml">Contact</a>
+  <div class="mob-lang">
+    <span class="l-act">FR</span>
+    <span style="color:rgba(255,255,255,.2)">|</span>
+    <a href="index.html">EN</a>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -245,14 +288,14 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
         <span class="pill">Intelligence artificielle</span>
       </div>
       <h1 class="h1">
-        Des images qui<br>
-        <i>communiquent.</i><br>
-        Des contenus qui convertissent.
+        Donnez plus<br>
+        <i>d'impact</i> à votre<br>
+        contenu.
       </h1>
-      <p class="h-sub">Nous accompagnons les entrepreneurs, créateurs, marques et entreprises dans la création de contenus professionnels qui attirent l'attention et développent leur visibilité.</p>
+      <p class="h-sub">Nous accompagnons les entrepreneurs, créateurs, marques et entreprises dans la création de contenus professionnels conçus pour attirer l'attention, renforcer leur image et développer leur visibilité.</p>
       <div class="hbtns">
         <a href="#devis" class="btn btn-g">Demander un devis</a>
-        <a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20je%20souhaite%20discuter%20d%27un%20projet%20avec%20vous." target="_blank" class="btn btn-wa">💬 Parler sur WhatsApp</a>
+        <a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20j%27ai%20vu%20votre%20page%20et%20je%20souhaite%20discuter%20d%27un%20projet." target="_blank" class="btn btn-wa">💬 Parler sur WhatsApp</a>
       </div>
     </div>
   </div>
@@ -262,15 +305,48 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- POUR QUI -->
+<section id="pourqui">
   <div class="tline"></div>
   <div class="wrap">
     <div class="sec-hd ctr rv">
-      <div class="tag">Ce que nous faisons</div>
-      <h2 class="htitle" style="margin-top:14px">Nos Services</h2>
+      <div class="tag">Pour qui ?</div>
+      <h2 class="htitle" style="margin-top:14px">Des solutions adaptées<br>à vos objectifs.</h2>
       <div class="gl"></div>
-      <p class="hsub">Des solutions visuelles complètes, du tournage au contenu digital, avec une qualité cinématographique et un focus sur les résultats.</p>
+    </div>
+    <div class="pq-grid rv">
+      <div class="pq-card">
+        <span class="pq-ico">🎥</span>
+        <div class="pq-title">Créateurs de contenu</div>
+        <div class="pq-desc">Développez votre présence avec des vidéos professionnelles pensées pour les réseaux sociaux.</div>
+      </div>
+      <div class="pq-card">
+        <span class="pq-ico">💼</span>
+        <div class="pq-title">Entrepreneurs</div>
+        <div class="pq-desc">Valorisez votre expertise et communiquez avec davantage de clarté et d'impact.</div>
+      </div>
+      <div class="pq-card">
+        <span class="pq-ico">✦</span>
+        <div class="pq-title">Marques</div>
+        <div class="pq-desc">Créez des contenus cohérents, modernes et mémorables qui renforcent votre identité.</div>
+      </div>
+      <div class="pq-card">
+        <span class="pq-ico">🏢</span>
+        <div class="pq-title">Entreprises</div>
+        <div class="pq-desc">Renforcez votre communication grâce à des contenus visuels professionnels et stratégiques.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-hd ctr rv">
+      <div class="tag">Nos services</div>
+      <h2 class="htitle" style="margin-top:14px">Ce que nous créons pour vous.</h2>
+      <div class="gl"></div>
+      <p class="hsub">De la vidéo courte aux projets audiovisuels complets, nous intervenons à chaque étape de votre production de contenu.</p>
     </div>
     <div class="sv-grid rv">
       <div class="sv s2">
@@ -282,26 +358,26 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
       <div class="sv s2">
         <div class="sv-num">02</div>
         <div class="sv-title">Création de contenu avec l'IA</div>
-        <div class="sv-desc">Production d'images, de vidéos et de contenus visuels avec l'IA — créativité amplifiée, production accélérée.</div>
-        <ul class="sv-tags"><li>Images IA</li><li>Vidéos IA</li><li>Scripts</li><li>Concepts créatifs</li><li>Storytelling</li><li>Réseaux sociaux</li></ul>
+        <div class="sv-desc">Production d'images, de vidéos et de concepts visuels avec l'IA — créativité amplifiée, production accélérée.</div>
+        <ul class="sv-tags"><li>Images IA</li><li>Vidéos IA</li><li>Concepts visuels</li><li>Contenu réseaux sociaux</li></ul>
       </div>
       <div class="sv s2">
         <div class="sv-num">03</div>
-        <div class="sv-title">Landing pages & Sites web avec l'IA</div>
-        <div class="sv-desc">Création de sites et de pages de conversion avec l'IA — esthétique moderne, performance digitale.</div>
-        <ul class="sv-tags"><li>Sites vitrines</li><li>Landing pages</li><li>Pages de capture</li><li>Sites professionnels</li></ul>
+        <div class="sv-title">Landing pages & Sites web avec IA</div>
+        <div class="sv-desc">Création de sites et de pages de conversion modernes, esthétiques et performantes.</div>
+        <ul class="sv-tags"><li>Sites vitrines</li><li>Landing pages</li><li>Pages de capture</li><li>Présence digitale</li></ul>
       </div>
       <div class="sv s3">
         <div class="sv-num">04</div>
         <div class="sv-title">Voix off en français</div>
-        <div class="sv-desc">Enregistrements de voix off professionnels en français pour vos contenus audiovisuels et digitaux.</div>
-        <ul class="sv-tags"><li>Publicités</li><li>Vidéos YouTube</li><li>Narration</li><li>Réseaux sociaux</li><li>Présentations d'entreprise</li></ul>
+        <div class="sv-desc">Enregistrements de voix off professionnels pour vos contenus audiovisuels et digitaux.</div>
+        <ul class="sv-tags"><li>Publicités</li><li>Narration</li><li>Réseaux sociaux</li><li>Présentations d'entreprise</li></ul>
       </div>
       <div class="sv s3">
         <div class="sv-num">05</div>
         <div class="sv-title">Traduction Français ↔ Portugais</div>
         <div class="sv-desc">Traduction spécialisée pour contenus audiovisuels et supports marketing entre français et portugais.</div>
-        <ul class="sv-tags"><li>Documents</li><li>Sous-titres</li><li>Contenus marketing</li><li>Supports audiovisuels</li></ul>
+        <ul class="sv-tags"><li>Documents</li><li>Sous-titres</li><li>Marketing</li><li>Supports audiovisuels</li></ul>
       </div>
     </div>
   </div>
@@ -309,18 +385,18 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
 
 <!-- PROCESSUS -->
 <section id="processus">
+  <div class="tline"></div>
   <div class="wrap">
     <div class="sec-hd ctr rv">
       <div class="tag">Notre approche</div>
-      <h2 class="htitle" style="margin-top:14px">Comment ça fonctionne ?</h2>
+      <h2 class="htitle" style="margin-top:14px">Un processus simple et efficace.</h2>
       <div class="gl"></div>
-      <p class="hsub">Un processus simple, clair et collaboratif pour que chaque projet reflète précisément votre vision.</p>
     </div>
     <div class="proc-grid rv">
       <div class="proc-item">
         <div class="proc-num">01</div>
-        <div class="proc-title">Vous nous expliquez votre projet</div>
-        <div class="proc-desc">Via le formulaire ou directement sur WhatsApp — nous sommes à l'écoute dès le premier message.</div>
+        <div class="proc-title">Vous nous présentez votre projet</div>
+        <div class="proc-desc">Via le formulaire ou sur WhatsApp — nous sommes disponibles dès le premier message.</div>
       </div>
       <div class="proc-item rv d1">
         <div class="proc-num">02</div>
@@ -334,22 +410,22 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
       </div>
       <div class="proc-item rv d3">
         <div class="proc-num">04</div>
-        <div class="proc-title">Début du projet</div>
-        <div class="proc-desc">Production, révisions et livraison — avec accompagnement à chaque étape.</div>
+        <div class="proc-title">Nous lançons la production</div>
+        <div class="proc-desc">Production, révisions et livraison avec un accompagnement à chaque étape.</div>
       </div>
     </div>
+    <p class="proc-note rv">Chaque projet est étudié individuellement afin de proposer une solution adaptée à vos objectifs et à votre budget.</p>
   </div>
 </section>
 
 <!-- FORMULAIRE -->
 <section id="devis">
-  <div class="tline"></div>
   <div class="wrap">
     <div class="sec-hd ctr rv">
-      <div class="tag">Formulaire de qualification</div>
-      <h2 class="htitle" style="margin-top:14px">Recevez votre <i style="color:var(--gold)">devis personnalisé</i></h2>
+      <div class="tag">Devis gratuit</div>
+      <h2 class="htitle" style="margin-top:14px">Parlez-nous de <i style="color:var(--gold)">votre projet.</i></h2>
       <div class="gl"></div>
-      <p class="hsub">Remplissez ce formulaire et nous vous enverrons une proposition adaptée à votre projet sous 24h.</p>
+      <p class="hsub">Quelques informations suffisent pour recevoir une proposition adaptée à vos besoins sous 24h.</p>
     </div>
     <div class="fm-card rv">
       <div class="fm-grid">
@@ -370,14 +446,13 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
             <option>Cameroun</option>
             <option>RD Congo</option>
             <option>Mali</option>
-            <option>Burkina Faso</option>
             <option>Maroc</option>
             <option>Tunisie</option>
             <option>Algérie</option>
             <option>Autre pays francophone</option>
           </select>
         </div>
-        <div class="ff"><label class="flb">Entreprise ou marque</label><input class="fin" type="text" id="f-ent" placeholder="Nom de votre marque ou entreprise"></div>
+        <div class="ff"><label class="flb">Entreprise ou marque</label><input class="fin" type="text" id="f-ent" placeholder="Nom de votre marque"></div>
         <div class="ff"><label class="flb">WhatsApp *</label><input class="fin" type="tel" id="f-wpp" placeholder="+33 6 xx xx xx xx"></div>
         <div class="ff"><label class="flb">E-mail</label><input class="fin" type="email" id="f-mail" placeholder="votre@email.com"></div>
         <div class="ff"><label class="flb">Instagram</label><input class="fin" type="text" id="f-ig" placeholder="@votrecompte"></div>
@@ -390,51 +465,40 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
           <label class="flb">Quel service recherchez-vous ?</label>
           <div class="cg">
             <label class="ck"><input type="checkbox" class="fsv" value="Montage vidéo"> Montage vidéo</label>
-            <label class="ck"><input type="checkbox" class="fsv" value="Création de contenu avec l'IA"> Création de contenu avec l'IA</label>
+            <label class="ck"><input type="checkbox" class="fsv" value="Création de contenu IA"> Création de contenu IA</label>
             <label class="ck"><input type="checkbox" class="fsv" value="Vidéos IA"> Vidéos IA</label>
             <label class="ck"><input type="checkbox" class="fsv" value="Site web / Landing page"> Site web / Landing page</label>
-            <label class="ck"><input type="checkbox" class="fsv" value="Voix off en français"> Voix off en français</label>
-            <label class="ck"><input type="checkbox" class="fsv" value="Traduction Français ↔ Portugais"> Traduction FR ↔ PT</label>
-          </div>
-        </div>
-
-        <div class="ff sp2">
-          <label class="flb">Quel type de contenu possédez-vous ?</label>
-          <div class="cg">
-            <label class="ck"><input type="checkbox" class="fct" value="Podcast"> Podcast</label>
-            <label class="ck"><input type="checkbox" class="fct" value="Vidéos YouTube"> Vidéos YouTube</label>
-            <label class="ck"><input type="checkbox" class="fct" value="Interviews"> Interviews</label>
-            <label class="ck"><input type="checkbox" class="fct" value="Formations"> Formations</label>
-            <label class="ck"><input type="checkbox" class="fct" value="Réseaux sociaux"> Réseaux sociaux</label>
-            <label class="ck"><input type="checkbox" class="fct" value="Pas encore de contenu"> Je n'ai pas encore de contenu</label>
+            <label class="ck"><input type="checkbox" class="fsv" value="Voix off"> Voix off</label>
+            <label class="ck"><input type="checkbox" class="fsv" value="Traduction FR ↔ PT"> Traduction FR ↔ PT</label>
           </div>
         </div>
 
         <div class="ff">
-          <label class="flb">Disposez-vous de vidéos ou fichiers ?</label>
+          <label class="flb">Disposez-vous déjà de contenu ?</label>
           <div class="cg">
-            <label class="ck"><input type="radio" name="fich" value="Oui"> Oui</label>
-            <label class="ck"><input type="radio" name="fich" value="Partiellement"> Partiellement</label>
-            <label class="ck"><input type="radio" name="fich" value="Non"> Non</label>
+            <label class="ck"><input type="radio" name="cont" value="Oui"> Oui</label>
+            <label class="ck"><input type="radio" name="cont" value="Partiellement"> Partiellement</label>
+            <label class="ck"><input type="radio" name="cont" value="Non"> Non</label>
           </div>
         </div>
 
         <div class="ff">
-          <label class="flb">Nombre de vidéos souhaité ?</label>
-          <div class="cg">
-            <label class="ck"><input type="radio" name="nb" value="1 à 5 vidéos"> 1 à 5</label>
-            <label class="ck"><input type="radio" name="nb" value="5 à 20 vidéos"> 5 à 20</label>
-            <label class="ck"><input type="radio" name="nb" value="Plus de 20 vidéos"> Plus de 20</label>
-          </div>
-        </div>
-
-        <div class="ff sp2">
           <label class="flb">Quel est votre délai ?</label>
           <div class="cg">
             <label class="ck"><input type="radio" name="dl" value="Urgent"> Urgent</label>
             <label class="ck"><input type="radio" name="dl" value="Cette semaine"> Cette semaine</label>
             <label class="ck"><input type="radio" name="dl" value="Ce mois-ci"> Ce mois-ci</label>
             <label class="ck"><input type="radio" name="dl" value="Flexible"> Flexible</label>
+          </div>
+        </div>
+
+        <div class="ff sp2">
+          <label class="flb">Budget estimé</label>
+          <div class="cg">
+            <label class="ck"><input type="radio" name="bgt" value="Moins de 500 €"> Moins de 500 €</label>
+            <label class="ck"><input type="radio" name="bgt" value="500 € à 1 500 €"> 500 € à 1 500 €</label>
+            <label class="ck"><input type="radio" name="bgt" value="1 500 € à 5 000 €"> 1 500 € à 5 000 €</label>
+            <label class="ck"><input type="radio" name="bgt" value="Plus de 5 000 €"> Plus de 5 000 €</label>
           </div>
         </div>
 
@@ -455,6 +519,7 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
 
 <!-- FAQ -->
 <section id="faq">
+  <div class="tline"></div>
   <div class="wrap">
     <div class="sec-hd ctr rv">
       <div class="tag">Questions fréquentes</div>
@@ -463,21 +528,50 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
     </div>
     <div class="faq-list rv">
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-txt">Travaillez-vous avec des clients dans d'autres pays ?</span><span class="faq-ico">+</span></div>
-        <div class="faq-a"><div class="faq-a-in">Oui. Nous travaillons à distance avec des clients en France, Belgique, Suisse, Canada et dans toute l'Afrique francophone. La plupart de nos services sont entièrement réalisables à distance.</div></div>
+        <div class="faq-q"><span class="faq-q-txt">Travaillez-vous avec des clients à l'international ?</span><span class="faq-ico">+</span></div>
+        <div class="faq-a"><div class="faq-a-in">Oui. Nous accompagnons des clients dans plusieurs pays et pouvons collaborer entièrement à distance, quel que soit votre pays d'origine.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="faq-q-txt">Êtes-vous disponible pour intervenir dans un autre pays ?</span><span class="faq-ico">+</span></div>
-        <div class="faq-a"><div class="faq-a-in">Oui. Selon la nature du projet, le budget et les conditions du contrat, nous pouvons nous déplacer et intervenir dans d'autres pays.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Oui. Selon le projet, le budget et les conditions de production, nous pouvons nous déplacer et intervenir à l'international.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span class="faq-q-txt">Proposez-vous uniquement le montage vidéo ?</span><span class="faq-ico">+</span></div>
-        <div class="faq-a"><div class="faq-a-in">Non. Nous proposons également la création de contenu, les solutions IA, les sites web et les services de voix off en français. Vous pouvez nous confier tout ou partie de votre projet audiovisuel et digital.</div></div>
+        <div class="faq-q"><span class="faq-q-txt">Proposez-vous uniquement du montage vidéo ?</span><span class="faq-ico">+</span></div>
+        <div class="faq-a"><div class="faq-a-in">Non. Nous proposons également des services de création de contenu, d'intelligence artificielle, de sites web et de voix off en français. Vous pouvez nous confier tout ou partie de votre projet.</div></div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span class="faq-q-txt">Travaillez-vous sur des projets plus importants ?</span><span class="faq-ico">+</span></div>
-        <div class="faq-a"><div class="faq-a-in">Oui. Pour les projets nécessitant une équipe plus importante, nous collaborons avec un réseau de freelances et de professionnels spécialisés afin de constituer une équipe adaptée à chaque production.</div></div>
+        <div class="faq-a"><div class="faq-a-in">Oui. Pour les productions nécessitant davantage de ressources, nous collaborons avec un réseau de freelances et de professionnels spécialisés afin de constituer une équipe adaptée à chaque projet.</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-hd ctr rv">
+      <div class="tag">Contact</div>
+      <h2 class="htitle" style="margin-top:14px">Nous sommes disponibles.</h2>
+      <div class="gl"></div>
+      <p class="hsub">Choisissez le canal qui vous convient le mieux. Nous répondons rapidement.</p>
+    </div>
+    <div class="ct-cards rv">
+      <a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20je%20souhaite%20discuter%20d%27un%20projet." target="_blank" class="ct-card">
+        <div class="ct-ico">📱</div>
+        <div class="ct-lb">WhatsApp</div>
+        <div class="ct-val">+55 (62) 98597-8785</div>
+      </a>
+      <a href="mailto:ksicfilmes@gmail.com" class="ct-card">
+        <div class="ct-ico">✉️</div>
+        <div class="ct-lb">E-mail</div>
+        <div class="ct-val">ksicfilmes@gmail.com</div>
+      </a>
+      <a href="https://www.facebook.com/ksicfilm/" target="_blank" class="ct-card">
+        <div class="ct-ico">📘</div>
+        <div class="ct-lb">Facebook</div>
+        <div class="ct-val">KSICFILM</div>
+      </a>
     </div>
   </div>
 </section>
@@ -489,14 +583,14 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
     <div class="cta-wrap rv">
       <div class="tag" style="margin-bottom:16px">Commençons</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:18px">
-        Donnez plus de visibilité<br>à votre <i style="color:var(--gold)">contenu.</i>
+        Prêt à donner une nouvelle<br><i style="color:var(--gold)">dimension</i> à votre contenu ?
       </h2>
       <div class="gl"></div>
-      <p class="hsub" style="margin:16px auto 0">De la vidéo courte aux projets audiovisuels plus ambitieux, KSICFILM vous accompagne dans la création de contenus qui marquent les esprits.</p>
+      <p class="hsub" style="margin:16px auto 0">Du montage vidéo aux projets audiovisuels plus ambitieux, KSICFILM vous accompagne dans la création de contenus professionnels qui valorisent votre image et marquent les esprits.</p>
       <div class="cta-bigline"></div>
       <div class="cta-btns-row">
         <a href="#devis" class="btn btn-g">✦ Demander un devis</a>
-        <a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20je%20souhaite%20discuter%20d%27un%20projet%20avec%20vous." target="_blank" class="btn btn-wa">💬 Parler sur WhatsApp</a>
+        <a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20je%20souhaite%20discuter%20d%27un%20projet." target="_blank" class="btn btn-wa">💬 Parler sur WhatsApp</a>
       </div>
     </div>
   </div>
@@ -509,10 +603,11 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
       <div class="ft-logo">KSIC<b>FILM</b></div>
       <div class="ft-copy">
         © KSICFILM. Tous droits réservés.<br>
-        <span style="color:var(--gd);font-size:10.5px">Production audiovisuelle & Contenu digital</span>
+        <span style="color:var(--gd);font-size:10.5px">Studio créatif audiovisuel · Version française</span>
       </div>
       <div class="ft-links">
-        <a href="mailto:ksicfilmes@gmail.com">ksicfilmes@gmail.com</a>
+        <a href="mailto:ksicfilmes@gmail.com">E-mail</a>
+        <a href="https://www.facebook.com/ksicfilm/" target="_blank">Facebook</a>
         <a href="https://samanthakpatoukpa.myportfolio.com/films" target="_blank">Portfolio ↗</a>
       </div>
     </div>
@@ -520,7 +615,7 @@ footer{background:#030303;padding:30px 0;border-top:1px solid var(--b1)}
 </footer>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20je%20souhaite%20discuter%20d%27un%20projet%20avec%20vous." target="_blank" class="wa-btn" title="WhatsApp">
+<a href="https://wa.me/5562985978785?text=Bonjour%20KSICFILM%2C%20je%20souhaite%20discuter%20d%27un%20projet." target="_blank" class="wa-btn" title="WhatsApp">
   <svg width="25" height="25" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -541,7 +636,7 @@ const obs=new IntersectionObserver(entries=>{
 },{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-// FAQ
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q=>{
   q.addEventListener('click',()=>{
     const item=q.parentElement;
@@ -571,10 +666,9 @@ function envoyerDevis(){
   const site=document.getElementById('f-site').value||'—';
   const desc=document.getElementById('f-desc').value||'—';
   const sv=[...document.querySelectorAll('.fsv:checked')].map(e=>e.value).join(', ')||'—';
-  const ct=[...document.querySelectorAll('.fct:checked')].map(e=>e.value).join(', ')||'—';
-  const fich=document.querySelector('input[name=fich]:checked')?.value||'—';
-  const nb=document.querySelector('input[name=nb]:checked')?.value||'—';
+  const cont=document.querySelector('input[name=cont]:checked')?.value||'—';
   const dl=document.querySelector('input[name=dl]:checked')?.value||'—';
+  const bgt=document.querySelector('input[name=bgt]:checked')?.value||'—';
   const msg=`✦ *DEMANDE DE DEVIS — KSICFILM*
 
 👤 *Informations client*
@@ -588,10 +682,9 @@ function envoyerDevis(){
 
 🎬 *Détails du projet*
 • Service(s) souhaité(s) : ${sv}
-• Type de contenu : ${ct}
-• Fichiers disponibles : ${fich}
-• Nombre de vidéos : ${nb}
+• Contenu existant : ${cont}
 • Délai : ${dl}
+• Budget estimé : ${bgt}
 
 📝 *Description du projet*
 ${desc}`;
